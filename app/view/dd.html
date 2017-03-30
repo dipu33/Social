@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <script src = "../js/angular.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../css/index.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+<body ng-app="a" ng-controller="aa">
+<button type="button" ng-click="d()">sub</button>
+</body>
+<script type="text/javascript">
+    var apps=angular.module('a',[]);
+    apps.controller('aa',function ($scope,$http) {
+        $scope.d=function () {
+            $http.get("http://localhost:63342/untitled8/public/javascripts/main.txt/tt/js").success(function (res) {
+                alert(res);
+            })
+        }
+    })
+</script>
+</html>

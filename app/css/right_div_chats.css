@@ -1,0 +1,54 @@
+#right_div{
+    float: right;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+    right: 0px;
+    top: 10%;
+    position: fixed;
+    background-color: #e9ebee;
+}
+
+li:hover{
+    cursor: hand;
+    background-color: white;
+}
+.live_feeds{
+    height: 50%;
+
+    background-color: #e9ebee;
+}
+
+
+.popup-box .popup-messages
+{
+    height: 70%;
+    width: 97%;
+    color:black;
+    overflow-y: scroll;
+}
+/*.popup-box .popup-head .popup-head-right a*/
+/*{*/
+    /*text-decoration: none;*/
+    /*color: inherit;*/
+/*}*/
+.popup-box
+{
+    /*display: none;*/
+    position: fixed;
+    bottom: 0px;
+    right: 220px;
+    height: 285px;
+    background-color: rgb(237, 239, 244);
+    width: 300px;
+    border: 1px solid rgba(29, 49, 91, .3);
+}
+.popup-box .popup-head
+{
+    background-color: #6d84b4;
+    padding: 5px;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    clear: both;
+}

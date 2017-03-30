@@ -1,0 +1,36 @@
+
+#log_btn{
+
+    top: 50%;
+    left: 90%;
+    position: absolute;
+    opacity: 1.0;
+
+    z-index: 4.0;
+}
+#reg_btn{
+    top: 50%;
+    position: absolute;
+
+    z-index: 4.0;
+}
+.container{
+
+    z-index: 1.0;
+    width: 100%;
+    background-image: url("../images/9.jpg");
+}
+#login_form{
+    z-index: 5.0;
+    top: 40%;
+    width: 100%;
+    padding: 10%;
+    position: absolute;
+}
+#register_form{
+    top: 40%;
+
+    z-index: 5.0;
+    width: 100%;
+    position: absolute;
+}

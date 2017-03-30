@@ -1,0 +1,56 @@
+<div ng-controller="ShowMyTimelineController" class="col-md-9 col-sm-12 col-lg-9 col-xs-12 timeline_display" xmlns="http://www.w3.org/1999/html">
+
+    <div  class="user_profile_pic">
+
+        <img ng-src="data:image/PNG;base64,{{timeline_usr_img}}" style="height: 400px;width: 100%;position: relative"  >
+        <div style="position: absolute;top: 270px; left: 30px; z-index: 3;padding: 2px;background-color: #2e6da4">
+            <img ng-src="data:image/PNG;base64,{{img_usr}}" style="height: 150px;width: 150px;" >
+        </div>
+        <h1 style="position: absolute;top: 280px; left: 200px; z-index: 3;padding: 5px;color: white">{{MyName}}</h1>
+        <button type="button" class="btn btn-primary fileContainer" style="position: absolute;top: 280px; right: 150px; z-index: 3;"><span><i class="fa fa-check-square" aria-hidden="true"></i> </span>&nbsp;Update Info </button>
+                <button type="button" class="btn btn-primary"ng-click="update_timeline()" style="position: absolute;top: 280px; right: 300px; z-index: 3;margin-right: 40px;"><span><i class="fa fa-check-square" aria-hidden="true"></i></span>&nbsp;&nbsp Activity Log</button>
+
+</div>
+    <div class="usr_display_border" style="position: relative">
+        <table id="user_menu">
+            <tr>
+                <td><a href="#" >TimeLine</a></td>
+                <td><a href="#" >About</a></td>
+                <td><a href="#" >Friends</a></td>
+                <td><a href="#" >Photos</a></td>
+            </tr>
+        </table>
+    </div>
+    <div style="width: 100%;height: 25%;background-color: white;" >
+    <form enctype="multipart/form-data">
+            <section style="float: left">
+                <div class="update_info" >
+                <section style="float: right">
+         <button class="btn btn-primary fileContainer" style="float: left">
+            update photo
+         <input type="file"  file-model="user_update_image" fileread="files" accept="image/*"  >
+         </button>
+                </section>
+                    <img ng-src="{{files}}" ng-show="files" style="height: 100px;width: 100px;" class="img_preview" >
+                    <button type="button" ng-show="files" class="btn_cancel" ng-click="remove_photo()">remove</button>
+                </div>
+            </section>
+        </form>
+        <button type="button" ng-click="user_image_upload()" class="btn btn-primary"  style="float: right;clear: both">Post</button>
+
+    </div>
+
+<section id="DisplayTimelineImages">
+<ul ng-repeat="i in TimelineUserData">
+   <div class="image_view" style="width:50%; border: 1px solid black">
+       <div id="username_image" style="height: 20px;width: 100%">
+           <p>
+           <a  ui-sref="show_timeline({username:'{{i.username}}'})">{{i.username}}</a>
+               added new photo
+           </p>
+       </div>
+       <img ng-src="data:image/;base64,{{i.ImageUrl}}" style="height: 400px;width: 100%">
+   </div>
+</ul>
+</section>
+</div>

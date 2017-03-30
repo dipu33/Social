@@ -1,0 +1,37 @@
+.user_profile_pic{
+    margin-top: 10%;
+    z-index: -1;
+    background-size: cover;
+}
+.timeline_display{
+    margin-left: 5%;
+    background-color: white;
+    height: 100%;
+    z-index: -1;
+    margin-top: 10%;
+}
+.usr_display_border{
+    height: 30px;
+    position: relative;
+}
+body{
+    background-color: #e9ebee;
+}
+
+#user_menu{
+    left:200px;
+    position: absolute;
+    border-spacing: 10px;
+}
+#user_menu td{
+    border-left: 1px solid black;
+    border-right:1px solid black;
+    padding: 10px;
+  }
+#user_menu td a{
+    text-decoration: none;
+}
+#user_menu td a:hover{
+    text-decoration: none;
+    color: blue;
+}

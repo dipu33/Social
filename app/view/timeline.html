@@ -1,0 +1,35 @@
+<div ng-controller="timeline_controller" class="col-md-8 col-sm-12 col-lg-8 col-xs-12 timeline_display">
+    <!--<button type="button" ng-click="Request_send()" ng-show="myvar">{{btn_val}}</button>-->
+    <!--<p>{{uname}}</p>-->
+    <!--<p>{{uemail}}</p>-->
+    <!--<form enctype="multipart/form-data">-->
+    <!--<input type="file"  accept="image/" file-model="user_profile_pic">-->
+    <!--<div>-->
+        <!--<img ng-src="data:image/PNG;base64,{{img_usr}}" style="height: 50px;width: 50px">-->
+    <!--</div>-->
+    <!--<button type="button" ng-click="upload_usr_profile()">Upload Profile Picture</button>-->
+<!--</form>-->
+<!--</div>-->
+<!--</form>-->
+<div  class="user_profile_pic">
+    <img ng-src="data:image/PNG;base64,{{timeline_usr_img}}" style="height: 400px;width: 100%;position: relative"  >
+    <div style="position: absolute;top: 270px; left: 30px; z-index: 3;padding: 2px;background-color: #2e6da4">
+    <img ng-src="data:image/PNG;base64,{{img_usr}}" style="height: 150px;width: 150px;" >
+    </div>
+    <h1 style="position: absolute;top: 280px; left: 200px; z-index: 3;padding: 5px;color: white">{{uname}}</h1>
+        <button type="button" class="btn btn-primary" style="position: absolute;top: 280px; right: 100px; z-index: 3; width:100px;"><span><i class="fa fa-check-square" aria-hidden="true"></i> </span>&nbsp;Friend</button>
+    <button type="button" class="btn btn-primary" style="position: absolute;top: 280px; right: 200px; z-index: 3;margin-right: 20px; width: 100px"><span><i class="fa fa-check-square" aria-hidden="true"></i></span>&nbsp;&nbsp;Follow</button>
+
+</div>
+    <div class="usr_display_border" style="position: relative">
+        <table id="user_menu">
+            <tr>
+                <td><a href="#" >TimeLine</a></td>
+                <td><a href="#" >About</a></td>
+                <td><a href="#" >Friends</a></td>
+                <td><a href="#" >Photos</a></td>
+            </tr>
+        </table>
+    </div>
+
+</div>

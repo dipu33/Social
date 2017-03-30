@@ -1,0 +1,14 @@
+
+.body{
+
+    z-index: 1.0;
+    width: 10%;
+    background-image: url("../images/29c6db390f1d326a22b844575e991d98.jpg");
+}
+
+#reg_btn{
+    top: 550%;
+    position: absolute;
+
+    z-index: 4.0;
+}

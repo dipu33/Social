@@ -1,0 +1,16 @@
+<div ng-controller="NewsFeedController" class="col-md-6 col-sm-12 col-lg-6 col-xs-12 timeline_display" style="left: 20%;margin-top: 10%">
+
+    <section id="DisplayTimelineImages" style="overflow: auto">
+        <ul ng-repeat="i in TimelineUserData">
+            <div class="image_view" style="width:100%; border: 1px solid black">
+                <div id="username_image" style="height: 20px;width: 100%">
+                    <p>
+                        <a  ui-sref="show_timeline({username:'{{i.UserDetails.username}}'})">{{i.UserDetails.username}}</a>
+                        added new photo
+                    </p>
+                </div>
+                <img ng-src="data:image/;base64,{{i.UserDetails.ImageUrl}}" style="height: 400px;width: 100%">
+            </div>
+        </ul>
+    </section>
+</div>

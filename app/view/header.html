@@ -1,0 +1,50 @@
+<script type="text/javascript">
+    $('#req_btn').click(function (e) {
+        $("#req_popup_menu").css({
+            'position': 'absolute',
+            'top': $(this).offset().top + $(this).height(),
+        }).slideToggle("slow");
+    });
+    $('#req_btn1').click(function (e) {
+        $("#req_popup_menu").css({
+            'position': 'absolute',
+         'top': $(this).offset().top + $(this).height(),
+        }).slideToggle("slow");
+    });
+    $(document).mouseup(function (e) {
+        var popup = $("#req_popup_menu");
+        if (!$('#req_btn').is(e.target) && !popup.is(e.target) && popup.has(e.target).length == 0) {
+            popup.hide(500);
+        }
+    });
+</script>
+<header>
+    <form  ng-controller="header_controller"  >
+    <div class="controls form-inline col-sm-12 col-xs-12 col-md-12 col-lg-12">
+    <div class="col-sm-10 col-lg-4 col-md-4 col-sm-offset-1" id="search_div">
+        <input type="text" ng-model="result" typeahead="obj.username for obj in user_name($viewValue)"  style="width: 80%">
+    <button type="button" class="btn btn-info" id="search_btn" ui-sref="show_timeline({username:result})" >Submit</button>
+        </div>
+        <button type="button" style="float: right" ng-click="logout()">Logout</button>
+    <div id="right_home"  style="float:right;">
+        <button type="button" ui-sref="home_page" style="float: left;background-color: transparent;font-weight: 700;color:white;border: transparent;margin-right:10px;font-size: 20px" >Home</button>
+        <button ui-sref="ShowMyTimeline" style="float: left;background-color: transparent;font-weight: 700;color:white;border: transparent;margin-right: 30px;font-size: 20px" ><img ng-src="data:image/PNG;base64,{{img_usr}}" style="height: 30px;width: 30px">&nbsp;{{username}}</button>
+
+        <div ng-click="request_popup()" style="float: left" id="req_btn"><img src="../../public/images/facebook-friend-request-icon_355988.png" style="height: 30px;margin-right: 15px; "><span class="badge" >{{request_notified}}</span></div>
+        <div id="req_popup_menu">
+            <table>
+                <tr ng-repeat="m in obj" style="border: 2px solid black" id='{{m.from_req}}'>
+                    <span ng-show="obj.length<1">no new friend request</span>
+                    <td><a  ui-sref="show_timeline({username:'{{m.from_req}}'})">{{m.from_req}}</a></td>
+                <td><button type="button"  ng-click="confirm_request(m.from_req)">confirm</button> </td>
+                <td><button type="button" ng-click="delete_request(m.from_req)">delete</button> </td>
+                </tr>
+            </table>
+        </div>
+        <div ng-click="request_popup()" style="float: left" id="req_btn1"><img src="../../public/images/facebook-friend-request-icon_355988.png" style="height: 30px; "><span class="badge" >{{request_notified}}</span></div>
+    </div>
+
+    </div>
+
+    </form>
+</header>
